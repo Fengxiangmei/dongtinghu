@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script language =javascript >
+var curIndex=0;
+//时间间隔(单位毫秒)，每秒钟显示一张，数组共有5张图片放在image文件夹下。图片路径可以是绝对路径或者相对路径
+var timeInterval=3000; //时间3秒
+var arr=new Array();
+arr[0]="image/lake6.jpg";
+arr[1]="image/lake2.jpg";
+arr[2]="image/lake5.jpg";
+//arr[3]="image/lake5.jpg";
+//arr[4]="image/lake2.jpg";
+setInterval(changeImg,timeInterval);
+function changeImg()
+{
+    var obj=document.getElementById("obj");
+    if (curIndex==arr.length-1) 
+    {
+        curIndex=0;
+    }
+    else
+    {
+        curIndex+=1;
+    }
+    obj.src=arr[curIndex];
+}
+</script>
+<style type="text/css">
+div#container{width:100%;background-color:#BCD4E3;}
+div#header {background-image:url(image/header.png);height:150px;width:100%;background-size:100% 100%;}
+div#navigation {background-color:#3C72C4; opacity: 0.6;width:100%;height:40px;
+						position: relative;
+						  left: 0px;
+						  top: 110px;}
+ div#marquee{backgroup-color:#eee;}
+div#br {width:100%;height:10px;}
+div#menu {background-color:#ffff99;height:200px;width:20%;float:left;}
+div#content {background-color:#EEEEEE;height:500px;width:960px; margin:0 auto;}
+div#footer {background-image:url(image/footer.png);height:30px;width:100%;;background-size:100% 100%;clear:both;text-align:center;}
+h1 {margin-bottom:0;}
+h2 {margin-bottom:0;font-size:18px;}
+ul {margin:0;}
+li {list-style:none;}
+a { text-decoration: none;} 
+.padding {
+    padding:0.15cm 5.5cm; }
+ .nav{
+	font-family : 微软雅黑,宋体;
+	font-size : 1.2em;
+	color :#FFFFFF;
+	font-weight:bold;}
+ .nav1{
+	font-family : 微软雅黑,宋体;
+	font-size : 1.2em;
+	color :#000;
+	font-weight:bold;}
+</style>
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="header">
+<div id="navigation">
+<p class="padding">
+<a href="main.html" class="nav1">首页</a>&nbsp;&nbsp;&nbsp;
+<a href="input.html"  class="nav">数据录入与管理</a>&nbsp;&nbsp;&nbsp;
+<a href="comment.html"  class="nav">水环境评价</a>&nbsp;&nbsp;&nbsp;
+<a href="analysis.html"  class="nav">分析决策</a>&nbsp;&nbsp;&nbsp;
+<a href=""  class="nav">后台管理</a>&nbsp;&nbsp;&nbsp;
+<a href="login.php?action=logout" class="nav">退出</a> &nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</div>
+</div>
+<div id="br"></div>
+<div id="content"><image  id=obj src="image/lake.jpg" height="500px" width="960px" border="0px"/></div>
+</div>
+</body>
+</html>

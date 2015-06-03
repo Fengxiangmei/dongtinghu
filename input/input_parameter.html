@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script language=JavaScript>
+
+
+//x限制只能输入数字
+ function clearNoNum(obj)
+    {
+        //先把非数字的都替换掉，除了数字和.
+        obj.value = obj.value.replace(/[^\d.]/g,"");
+        //必须保证第一个为数字而不是.
+        obj.value = obj.value.replace(/^\./g,"");
+        //保证只有出现一个.而没有多个.
+        obj.value = obj.value.replace(/\.{2,}/g,".");
+        //保证.只出现一次，而不能出现两次以上
+        obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+    }
+
+function InputCheck(InputForm)
+{
+//检查下拉框是否选择
+if(document.getElementById("parameter").value == "null"){
+  alert("请选择评价参数！");
+  return false;
+}
+if(document.getElementById("place").value == "null"){
+  alert("请选择地点！");
+  return false;
+}
+if(document.getElementById("time").value == "null"){
+  alert("请选择时间！");
+  return false;
+}
+//检查输入框是否全部输入
+  if (InputForm.CODMn.value == "")
+  {
+    alert("请输入高锰酸盐指数!");
+    InputForm.CODMn.focus();
+    return (false);
+  }
+  if (InputForm.COD.value == "")
+  {
+    alert("请输入化学需氧量!");
+    InputForm.COD.focus();
+    return (false);
+  }
+    if (InputForm.BOD5.value == "")
+  {
+    alert("请输入五日生化需氧量!");
+    InputForm.BOD5.focus();
+    return (false);
+  }
+   if (InputForm.NH3_N.value == "")
+  {
+    alert("请输入氨氮!");
+    InputForm.NH3_N.focus();
+    return (false);
+  }
+   if (InputForm.P.value == "")
+  {
+    alert("请输入总磷!");
+    InputForm.P.focus();
+    return (false);
+  }
+   if (InputForm.As.value == "")
+  {
+    alert("请输入砷!");
+    InputForm.As.focus();
+    return (false);
+  }
+   if (InputForm.Hg.value == "")
+  {
+    alert("请输入汞!");
+    InputForm.Hg.focus();
+    return (false);
+  }
+   if (InputForm.Cd.value == "")
+  {
+    alert("请输入镉!");
+    InputForm.Cd.focus();
+    return (false);
+  }
+   if (InputForm.Cr.value == "")
+  {
+    alert("请输入鉻!");
+    InputForm.Cr.focus();
+    return (false);
+  }
+   if (InputForm.Petroleum.value == "")
+  {
+    alert("请输入石油类!");
+    InputForm.Petroleum.focus();
+    return (false);
+  }
+     if (InputForm.Anionicsurfactant.value == "")
+  {
+    alert("请输入阴离子表面活性剂!");
+    InputForm.Anionicsurfactant.focus();
+    return (false);
+  }
+     if (InputForm.Sulfid.value == "")
+  {
+    alert("请输入硫化物!");
+    InputForm.Sulfid.focus();
+    return (false);
+  }
+     if (InputForm.Coliforms.value == "")
+  {
+    alert("请输入粪大肠菌群!");
+    InputForm.Coliforms.focus();
+    return (false);
+  }
+ 
+}
+<!-- background-color:#7488B8; -->
+//-->
+</script>
+<style type="text/css">
+div#container{width:100%;background-color:#BCD4E3;}
+div#header {background-image:url(../image/header.png);height:150px;width:100%;background-size:100% 100%;}
+div#navigation {background-color:#3C72C4; opacity: 0.6;width:100%;height:40px;
+						position: relative;
+						  left: 0px;
+						  top: 110px;}
+ div#marquee{backgroup-color:#eee;}
+div#br {width:100%;height:10px;}
+div#center {background-color:;height:500px;width:960px; margin:0 auto;}
+div#menu {background-color:#7488B8;height:500px;width:190px;float:left;border-radius:10px;border:2px solid #7488B8;}
+div#divise {background-color:;height:500px;width:10px;float:left;}
+div#content {background-color:#EEEEEE;height:500px;width:750px;float:left;border-radius:10px;border:2px solid#7488B8;}
+div#footer {background-image:url(image/footer.png);height:30px;width:100%;;background-size:100% 100%;clear:both;text-align:center;}
+h1 {margin-bottom:0;}
+h2 {margin-bottom:0;font-size:18px;}
+ul {margin:0;}
+li {list-style:none;}
+a { text-decoration: none;} 
+.padding {
+    padding:0.15cm 5.5cm; }
+ .nav{
+	font-family : 微软雅黑,宋体;
+	font-size : 1.2em;
+	color :#FFFFFF;}
+ .nav1{
+	font-family : 微软雅黑,宋体;
+	font-size : 1.2em;
+	color :#000;
+	font-weight:bold;}
+
+
+.item{
+	font-family : 宋体;
+	font-size : 1.0em;
+	color :#000;
+	position: relative;
+			left: 80px;}
+.choice{
+	width:200px;
+	font-family : 微软雅黑,宋体;
+	font-size : 0.8em;
+	color :#000;}
+.center{
+
+}
+fieldset{background-color:#7488B8;width:700px; margin: 0 auto;border-radius:10px;
+			position: relative;
+			 top: 0px;
+			 }
+ .input{width:70px;height=100px;
+				font-family : 微软雅黑,宋体;
+				font-size : 1em;
+				color :#203A66;
+				position: relative;
+			 left: 250px;}
+ .function{
+	background-color:#203A66;
+	border-radius:10px;
+	width:192px;
+	height:45px;
+	font-family : 微软雅黑,宋体;
+	font-size : 1em;
+	color :#FFFFFF;
+}	
+.subnav{
+	font-family : 微软雅黑,宋体;
+	font-size : 0.8em;
+	color :#FFFFFF;
+}
+.subnav1{
+	font-family : 微软雅黑,宋体;
+	font-size : 0.8em;
+	color :#203A66;
+	font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="header">
+<div id="navigation">
+<p class="padding">
+<a href="../main.html" class="nav">首页</a>&nbsp;&nbsp;&nbsp;
+<a href="../input.html"  class="nav1">数据录入与管理</a>&nbsp;&nbsp;&nbsp;
+<a href="../comment.html"  class="nav">水环境评价</a>&nbsp;&nbsp;&nbsp;
+<a href="../analysis.html"  class="nav">决策分析</a>&nbsp;&nbsp;&nbsp;
+<a href=""  class="nav">后台管理</a>&nbsp;&nbsp;&nbsp;
+<a href="login.php?action=logout" class="nav">退出</a> &nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</div>
+</div>
+<div id="br"></div>
+
+<div id="center">
+<div id="menu">
+<center><input type="button" name="test" value="功 能 导 航" onClick="location.href='comment.html'" class="function"/>
+<br/><br/>
+<a href="input_parameter.html" class="subnav1">评 价 参 数</a>
+<hr style="filter: alpha(opacity=100, finishopacity=0, style=3)" width="80%" color="#203A66" SIZE="3">
+<a href="input_level.html" class="subnav">营 养 状 况</a>
+<hr style="filter: alpha(opacity=100, finishopacity=0, style=3)" width="80%" color="#203A66" SIZE="3">
+
+</center>
+</div>
+<div id="divise"></div>
+<div id="content"><br/><span><form action="input_parameter.php" method="post" id="item" onSubmit="return InputCheck(this)" name="InputForm">
+<p class="item">评价参数：
+<select name="parameter"    id ="parameter"  class="choice" >
+<option  value="null">请选择</opton>
+<option value="p">P值</option>
+<option value="k">K值</option>
+</select>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地点：
+<select name="place" id ="place"  class="choice" >
+<option  value="null">请选择</opton>
+<option value="樟树港">樟树港</option>
+<option value="万家嘴">万家嘴</option>
+<option value="坡头">坡头</option>
+<option value="沙河口">沙河口</option>
+<option value="南嘴">南嘴</option>
+<option value="目平湖">目平湖</option>
+<option value="小河嘴">小河嘴</option>
+<option value="万子湖">万子湖</option>
+<option value="横岭湖">横岭湖</option>
+<option value="虞公庙">虞公庙</option>
+<option value="漉角">漉角</option>
+<option value="东洞庭湖">东洞庭湖</option>
+<option value="岳阳楼l">岳阳楼</option>
+<option value="洞庭湖出口">洞庭湖出口</option>
+</select>
+</p>
+<p class="item">&nbsp;&nbsp;&nbsp;&nbsp;时间：
+<select name="time" id="time"  class="choice" >
+<option  value="null">请选择</opton>
+<option value="2010">2010</option>
+<option value="2011">2011</option>
+<option value="2012">2012</option>
+<option value="2013">2013</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+</select>
+</p>
+<font size="1" color="red">&nbsp; &nbsp;（以下各项只能填数字）</font>
+<fieldset><br/>
+	<table>
+	<tr>
+	<td>高锰酸盐指数:&nbsp; &nbsp;&nbsp;&nbsp;<input id="CODMn" name="CODMn" type="text" onkeyup="clearNoNum(this)"/> &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;化学需氧量: <input type="text" name="COD" onkeyup="clearNoNum(this)" /></td>
+	</tr><tr></tr>
+	<tr>
+	<td>五日生化需氧量:&nbsp;&nbsp; <input type="text" name="BOD5" onkeyup="clearNoNum(this)"/> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;氨氮: <input type="text" name="NH3_N"  onkeyup="clearNoNum(this)"/></td>
+	</tr><tr></tr>
+	<tr>
+	<td> 总磷: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="P"  onkeyup="clearNoNum(this)"/> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;砷: <input type="text" name="As" onkeyup="clearNoNum(this)" /></td>
+	</tr><tr></tr>
+	<tr>
+	<td>汞:&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;<input type="text" name="Hg"  onkeyup="clearNoNum(this)"/> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;镉：<input type="text" name="Cd"  onkeyup="clearNoNum(this)"/></td>
+	</tr><tr></tr>
+	<tr>
+	<td>鉻: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <input type="text" name="Cr" onkeyup="clearNoNum(this)"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 石油类: <input type="text" name="Petroleum" onkeyup="clearNoNum(this)"/></td>
+	</tr><tr></tr>
+	<tr>
+	<tr>
+	<td>阴离子表面活性剂: <input type="text" name="Anionicsurfactant"  onkeyup="clearNoNum(this)"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  硫化物: <input type="text" name="Sulfid" onkeyup="clearNoNum(this)" /></td>
+	</tr><tr></tr>
+	<tr>
+	<td>粪大肠菌群:&nbsp;  &nbsp; &nbsp; &nbsp;<input type="text" name="Coliforms" onkeyup="clearNoNum(this)" /></td>
+	</tr><tr></tr>
+
+	</table>	 <br/>
+  
+</fieldset>	  <br/>
+<input type="submit" value="确定" class="input" />&nbsp;  &nbsp; 
+ <input type="reset" value="重置"  class="input" />
+</form></span></div>
+</div>
+<!-- <div id="content">
+
+
+
+ </div> -->
+
+<!-- <div id="footer">Copyright W3School.com.cn</div> -->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>用户登录</title>
+<style type="text/css">
+   
+    fieldset{background-color:#7488B8;width:520px; margin: 0 auto;border-radius:15px;
+			position: relative;
+			 top: 30px;}
+	.login{ background-color:#203A66;width:960px;height:340px;margin: 0 auto;border-radius:10px;border:5px solid #7488B8;
+				position: relative;
+						top: 100px;
+			}
+    legend{font-weight:bold;font-family : 微软雅黑,宋体;
+				font-size : 1.2em;
+				color :#fff;}
+    label{float:left; width:80px; margin-left:100px;
+			font-weight:bold;
+			font-family : 微软雅黑,宋体;
+				font-size : 1em;
+				color :#203A66;}
+    .left{margin-left:80px;}
+    .input{width:180px;height=100px;
+				font-family : 微软雅黑,宋体;
+				font-size : 1em;
+				color :#203A66;}
+    span{color: #666666;}
+	.button{
+				font-weight:bold;
+				font-family : 微软雅黑,宋体;
+				font-size : 1em;
+				color :#203A66; 
+				position: relative;
+						top: 5px;
+						left:180px;}
+</style>
+<script language=JavaScript>
+<!--
+
+function InputCheck(LoginForm)
+{
+  if (LoginForm.username.value == "")
+  {
+    alert("请输入用户名!");
+    LoginForm.username.focus();
+    return (false);
+  }
+  if (LoginForm.password.value == "")
+  {
+    alert("请输入密码!");
+    LoginForm.password.focus();
+    return (false);
+  }
+}
+<!-- background-color:#7488B8; -->
+//-->
+</script>
+</head>
+<body>
+<div class="login">
+<fieldset>
+<legend><p>洞庭湖水环境评价分析决策支持系统</p></legend>
+<form name="LoginForm" method="post" action="login.php" onSubmit="return InputCheck(this)">
+<p>
+<label for="username" class="label">用户名:</label>
+<input id="username" name="username" type="text" class="input" />
+<p/>
+<p>
+<label for="password" class="label">密 码:</label>
+<input id="password" name="password" type="password" class="input" />
+<p/>
+<p>
+<input type="submit" name="submit" value=" 登 录 " class="button" />&nbsp;&nbsp;
+<input type="button" name="test" value=" 注 册 " onClick="location.href='reg.html'" class="button"/>
+</p>
+</form>
+</fieldset>
+</div>
+</body>
+</html>
